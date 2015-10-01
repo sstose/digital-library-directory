@@ -1,0 +1,13 @@
+; $Id$
+name = Clear Log Button
+description = add a Clear Log button to the "Recent log entries" page
+package = Clear Log Button
+core = 6.x
+
+
+; Information added by drupal.org packaging script on 2011-07-11
+version = "6.x-1.0"
+core = "6.x"
+project = "clear_log_button"
+datestamp = "1310416615"
+

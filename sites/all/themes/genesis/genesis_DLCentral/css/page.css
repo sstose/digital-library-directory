@@ -1,0 +1,976 @@
+/* $Id: page.css,v 1.1.2.28 2009/06/12 15:44:26 jmburnz Exp $ */
+
+/**
+ * @file page.css
+ * This stylesheet provides the page main styles for this theme.
+ */
+
+/**
+ * Remove unused styles for performace.
+ */
+
+/**********************************************************
+ *              Section, Page and Body Classes
+ **********************************************************/
+/**
+ * Normally you will use these in combination with other
+ * selectors. I include them here for completedness.
+ */
+	
+/** 
+ * Section Class
+ * The section class takes the 2nd part of the URL and
+ * builds a section-[arg] class from it. If you emulate
+ * site sections using the Pathauto module this can be a 
+ * powerful way to style site sections.
+ *
+ * Look in body element for the section you want to style
+ * to find the class to replace section-[arg]:
+ */
+/* .section-arg {} */
+
+/* Front or not front. */
+.front {}
+.not-front {}
+
+/* Is the user logged in. */
+.logged-in {}
+.not-logged-in {}
+
+/* Node type body classes. */
+.node-type-book  {}
+.node-type-blog  {}
+.node-type-forum {}
+.node-type-page  {}
+.node-type-poll  {}
+.node-type-story {}
+
+/**
+ * Warning! 
+ * The sidebar body classes are integral to how genesis
+ * applies the layout - do not add margin, padding, borders,
+ * or positioning styles to these classes! @see layout.css. 
+ */
+.one-sidebar   {}
+.two-sidebars  {}
+.sidebar-right {}
+.sidebar-left  {}
+
+/** 
+ * Optional Region body classes
+ * When any of the following regions are active a body class can be set.
+ * To use you need to uncomment the conditional statements in 
+ * genesis_preprocess_page(), @see template.php.
+ */
+/*
+.leaderboard       {}
+.header-blocks     {}
+.secondary-content {}
+.tertiary-content  {}
+.footer            {}
+*/
+
+/** 
+ * Page Path Class
+ * The page path class takes the entire URL and builds a page-[path] 
+ * class from it. See examplebelow. You need to use Firebug or view 
+ * source to find out what the actual class will be, and be aware
+ * that this will change if your URL alias changes!
+ *
+ * Replace [example-node-path] with the path you want
+ * to style.
+ */
+/* .page-example-node-path {} */
+
+
+/**********************************************************
+ *                  The wrapper divs
+ *    Be careful how you modify these, see layout.css
+ **********************************************************/
+/**
+ * Width Setting
+ *
+ * Genesis supports Elastic, Fluid and Fixed width values.
+ * Elastic layouts are dynamic and will expand or contract when 
+ * the font size is changed. Fluid widths change when the browser 
+ * is resized and fixed width layouts stay the same width even 
+ * when the broswer is resized or the font size is changed.
+ *
+ * Elastic layouts use ems,       e.g. 80em
+ * Fluid layouts use percentages, e.g. 85%
+ * Fixed widths use pixels,       e.g. 960px
+ 
+ */
+#container {
+  width: 100%;     /* Width for IE6 */
+}
+
+body > #container {
+  width: 100%;     /* Width for all other browsers 90% */
+  max-width:100%; /* set a maximum width 90% */
+  min-width:1000px; /* set a minimum width 960px */
+}
+
+.node .picture {display: none;}
+
+/*.section-index .block-vocabindex .block-content {height: 450px; overflow: auto;} 
+
+.section-index .vocabindex-desc {display: none;} */
+
+.block-vocabindex h2, .section-index h1 {
+border: 1px solid #e0e0c2;
+display: block;
+margin-bottom: 5px;
+padding: 5px;
+font-size: 1.4em;
+}
+
+#headercontainer #taxonomymainmenu {
+width: 100%;
+z-index: 90;
+position: fixed;
+}
+
+#headercontainer #taxonomymainmenu .taxtop {
+float: left;
+width: 20%;
+display: block;
+text-align: center;
+opacity: .9;
+
+}
+#footer #taxonomymainmenu .taxtop {
+float: left;
+width: 20%;
+display: block;
+text-align: center;
+height: 600px;
+margin-bottom: -20px;
+-moz-box-shadow:    inset 0 0 2px #D5D6D4;
+-webkit-box-shadow: inset 0 0 2px #D5D6D4;
+box-shadow:         inset 0 0 2px #D5D6D4;
+opacity: .8;
+}
+#footer #taxonomymainmenu .taxtop.first {background-color: #BDBF41; margin-right: 0;}
+#footer #taxonomymainmenu .taxtop.second {background-color: #BFA641; margin-right: 0;}
+#footer #taxonomymainmenu .taxtop.third  {background-color: #A89E42; margin-right: 0;}
+#footer #taxonomymainmenu .taxtop.fourth {background-color: #8E9A41; margin-right: 0;}
+#footer #taxonomymainmenu .taxtop.last {background-color: #B5923E;border-right: none;}
+
+
+#taxonomymainmenu .taxtop .inner {
+/*font-family: "Dutch-Harely";*/
+font-size: 1.4em;
+font-weight: 500;
+}
+/*
+@font-face {
+font-family: Dutch-Harely;
+src: url("../images/handwriting_draft/handwriting-draft_free-version.ttf");
+}
+*/
+
+#taxonomymainmenu .taxtop .inner a {
+display: block;
+color: #3C3C3C;
+font-variant: small-caps;
+padding: 6px 0 6px 0;
+opacity: none;
+}
+
+#footer #taxonomymainmenu .taxtop .inner a {
+display: block;
+border-bottom: 1px solid transparent;
+}
+#footer #taxonomymainmenu .taxtop .inner a:hover {
+display: block;
+background-color: transparent;
+opacity: .6;
+}
+
+
+/* 2.3% best if using 90%; best: width 2.5 margin 18% width */
+#headercontainer #taxonomymainmenu .taxtop.first .inner {background-color: #BDBF41; margin-right: 0; border-right: 1px solid #D5D6D4; border-top: 1px solid #AFAFAF;  }
+#headercontainer #taxonomymainmenu .taxtop.second .inner {background-color: #BFA641; margin-right: 0; border-right: 1px solid #D5D6D4; border-top: 1px solid #AFAFAF;  }
+#headercontainer #taxonomymainmenu .taxtop.third .inner {background-color: #A89E42; margin-right: 0; border-right: 1px solid #D5D6D4; border-top: 1px solid #AFAFAF; }
+#headercontainer #taxonomymainmenu .taxtop.fourth .inner {background-color: #8E9A41; margin-right: 0; border-right: 1px solid #D5D6D4; border-top: 1px solid #AFAFAF; }
+#headercontainer #taxonomymainmenu .taxtop.last .inner {background-color: #B5923E; border-top: 1px solid #AFAFAF; }
+
+
+#headercontainer #taxonomymainmenu .taxtop .inner a:hover {background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+}
+
+
+/*
+#taxonomymainmenu .taxtop .inner a {background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+}
+*/
+
+/*
+#taxonomymainmenu .taxtop.first .inner a:hover { 
+background-color: #BDBF41; 
+}
+#taxonomymainmenu .taxtop.second .inner a:hover { 
+background-color: #BFA641; 
+}
+#taxonomymainmenu .taxtop.third .inner a:hover { 
+background-color: #A89E42; 
+}
+#taxonomymainmenu .taxtop.fourth .inner a:hover{ 
+background-color: #8E9A41; 
+}
+#taxonomymainmenu .taxtop.last .inner a:hover { 
+background-color: #B5923E; 
+}
+#taxonomymainmenu .taxtop .inner a:hover {
+-webkit-transition: background 500ms linear;
+-moz-transition: background 500ms linear;
+-ms-transition: background 500ms linear;
+-o-transition: background 500ms linear;
+transition: background 500ms linear;
+}*/
+
+
+#headercontainer .taxtop .open {
+cursor: pointer;
+height: 15px;
+color: #848383;
+font-size: 1em;
+background-color: #C2C5C8;/*#B1B2B2*/
+border-right: 1px solid #D5D6D4;
+border-bottom: 1px solid #D5D6D4;
+
+}
+#headercontainer .taxtop .open:hover {
+background-color: #8F918E;
+}
+
+.taxtop.last .open {
+border-right: none;
+}
+
+#footer .taxtop .open {
+display:none;
+}
+
+#taxonomymainmenu .taxtop li {
+list-style: none;
+color: blue;
+}
+
+#headercontainer #taxonomymainmenu .taxtop .list {
+display: none;
+padding-top: 15px;
+background-color: #3C3C3C;
+margin: 0 1px 0 0;
+-webkit-border-radius: 0 0 8px 8px;
+border-radius: 0 0 8px 8px;
+}
+
+#footer #taxonomymainmenu .taxtop .list {
+padding-top: 5px;
+margin: 0 1px 0 0;
+
+}
+
+#headercontainer #taxonomymainmenu .taxtop .list a {
+display: block;
+font-size: 1.2em;
+margin: 3px 10px 0 0;
+border-top: 1px solid #909193;
+}
+#footer #taxonomymainmenu .taxtop .list a {
+font-size: 1em;
+margin: 0 15px 0 5px;
+padding: 3px 0 2px 0;
+color: #3C3C3C;
+display: block;
+border-top: 1px solid #909193;
+}
+
+
+#headercontainer #taxonomymainmenu .taxtop.first .list a {color: #BDBF41;}
+#headercontainer #taxonomymainmenu .taxtop.second .list a {color: #BFA641;}
+#headercontainer #taxonomymainmenu .taxtop.third .list a {color: #A89E42;}
+#headercontainer #taxonomymainmenu .taxtop.fourth .list a {color: #8E9A41;}
+#headercontainer #taxonomymainmenu .taxtop.last .list a {color: #B5923E;}
+
+#headercontainer #taxonomymainmenu .taxtop .list a:hover {
+color: #E0E0E0;
+}
+
+
+
+/**
+ * See page.tpl.php for changes. Also, first two commands override Genesis main theme
+ *  in layout.css 
+ */
+
+
+/* Column wrappers */
+#columns {}
+.columns-inner {
+
+}
+
+/* Content wrappers */
+#content-column {
+}
+.content-inner {margin: 0; padding: 0;}
+
+/* Main content wrappers*/
+#main-content {}
+#content {}
+
+/**********************************************************
+ *                       Regions
+ **********************************************************/
+/* Target all regions with this low specifity selector. */
+.region {}
+.region-inner {}
+
+/**
+ * Most regions have an .inner div to set paddings or other
+ * design contingencies.
+ */
+ 
+/* Leaderboard is a full width region at the very top, 
+   ideal for displaying banners. */
+
+#leaderboard-top {
+}
+
+#leaderboard-top .region-inner {}
+
+
+/* Header blocks region is embedded in the header, floated
+   between the logo/site_name and the search box. */
+#header: {}
+#header-blocks {margin-top: 10px; position: block;}
+
+#header-blocks .region-inner {}
+#header-blocks .region-inner .block {display: block; margin: 0; padding: 0px;}
+#header-blocks .region-inner .block-content {
+}
+
+#block-block-10 {
+margin: 0;
+padding: 60px 0 0 0;
+}
+#block-block-10 .block-content {
+font-size: .9em;
+letter-spacing: .2em;
+text-align: right;
+padding: 0 10px 0 0;
+position: relative;
+top: 17px;
+width: 33%;
+float: right;
+}
+
+#block-block-10 .block-content a {
+color: #C7C59B;
+}
+
+/*****************************************************************************   
+ 
+ /* Secondary content is a full width region between 
+   the header and the main columns. */
+   
+#secondary-content {} 
+#secondary-content .region-inner {}
+
+/* Tertiary content is a full width region above the footer, 
+   below the main content. */
+#tertiary-content {}
+#tertiary-content .region-inner {}
+
+/* Content top and bottom are above and below the main content, 
+   within the main content column. */
+#content-top {
+}
+
+#content-bottom {width: 101.5%}
+
+
+/**********************************************************
+ *                      Sidebars
+ **********************************************************/
+/* Target both sidebars with this low specifity selector. */
+.sidebar {}
+.sidebar-inner {}
+
+/* Target a specific sidebar, inner or sidebar-inner. */
+#sidebar-left {}
+#sidebar-left .sidebar-inner {}
+
+#sidebar-right {}
+#sidebar-right .sidebar-inner {}
+
+
+/*********************************************************
+*                     GPanel Regions
+**********************************************************/
+
+#genesis-1c .two-sidebars  .content-inner {margin: 0 400px 0 190px;}
+#genesis-1c .sidebar-left  .content-inner {margin-left:190px;}
+#genesis-1c .sidebar-right .content-inner {margin-right: 400px;}
+#genesis-1c #sidebar-left  {width: 180px; margin-left: -100%; }
+#genesis-1c #sidebar-right {width: 390px; margin-left: -390px;}
+
+
+/*
+For help on the negative margins below, see: http://www.alistapart.com/articles/negativemargins/
+*/
+
+.two-col-50 .region {width: 100%;}
+.two-col-50 .col-1 {float: left; width: 620px; margin-right: -620px; z-index: 1;}
+.two-col-50 .col-2 .inner {margin-left: 620px;}
+
+.two-col-50-b .region{width:49.5%;}
+.two-col-50-b .col-1{float:left;}
+.two-col-50-b .col-2{float:right;}
+.two-col-50-b .gpanel{margin:0;}
+
+.two-col-50-b .region {width: 100%; margin-top: 15px;}
+.two-col-50-b .col-1 {float: left; width: 85%; margin-right: -85%; z-index: 1;}
+.two-col-50-b .col-2 .inner {margin-left: 85%;}
+
+/**********************************************************
+ *                   Quaternary Content (Most Popular etc)
+ **********************************************************/
+/**/
+
+#quaternary-content {
+border-top: 80px solid #9B9B9B;
+background-image: url(../images/background_5.png);
+padding-bottom: 100px;
+}
+
+#quaternary-content .region-inner {width: 90%; margin: 0 auto; min-width: 1000px;} 
+
+#quaternary-content .quicktabs_tabpage .block-views, .view-votes-block .block-views {
+margin-right: -4.1%;
+margin-top: 60px;
+}
+
+.section-your-ratings #content .view-votes-block {
+margin-right: -4.1%;
+padding-bottom: 20px;
+}
+
+#quaternary-content .views-row, .view-votes-block .views-row {
+float: left;
+display: inline-block;
+margin: 35px 3% 35px 0;
+width: 30%;
+height: 150px;
+}
+
+#quaternary-content .views-row .views-field-field-dlimage-fid, .view-votes-block .views-field-field-dlimage-fid  {
+height: 120px;
+overflow: hidden;
+}
+ 
+#quaternary-content .views-row .imagecache-dl_image_exhibit img, .view-votes-block .views-row .imagecache-dl_image_exhibit img {
+height: auto;
+max-width: 100%;
+}
+
+#quaternary-content .view-popular-block .views-row .views-field-title, #quaternary-content .view-recently-viewed .views-row .views-field-title,
+.view-votes-block .views-row .views-field-title 
+ {
+display: inline-block;
+width: 97%;
+height: 40px;
+overflow: hidden;
+border-bottom: 1px solid #CACACC;
+color: #737472;
+padding: 5px 0 0 5px;
+font-size: 1.2em;
+}
+
+#quaternary-content .view-popular-block .views-row .views-field-totalcount, #quaternary-content .view-popular-block .views-row .views-field-daycount
+{
+display: block;
+width: 98%;
+text-align: right;
+padding-right: 15px;
+color: #9F9F9F;
+font-size: 1em;
+}
+
+.view-votes-block .views-row .views-field-value {
+float: right;
+}
+
+#block-views-votes_block-block_1 .view-votes-block .more-link a {
+clear: both;
+float: right;
+margin: 20px 4% 0 0;
+padding: 5px;
+background-color: #B1B894;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+}
+
+.more-link2 {
+padding: 2px;
+background-color: #D2D5BD;
+-webkit-border-radius: 2px;
+border-radius:2px;
+margin-left: 10px;
+}
+
+
+
+/**********************************************************
+ *                   Skip navigation
+ **********************************************************/
+/**
+ * To hide the skip-nav you can use: 
+ * 
+ * height: 0; 
+ * overflow: hidden;
+ * 
+ * Do not use display:none as this hides it from screen readers!
+ */
+#skip-nav {
+   text-align: right; /* LTR */
+}
+
+/* Override default pseudo class styles */
+#skip-nav a:link    {}
+#skip-nav a:visited {}
+#skip-nav a:hover   {}
+#skip-nav a:focus   {}
+#skip-nav a:active  {}
+
+/**
+ * An alternative method is to position the skip-nav link offscreen
+ * until the user tabs the link into focus. Uncomment the following to use.
+ * 
+ * Adjust the style of the active/focused link to suit.
+ */
+/*
+#skip-nav {
+   text-align: left;
+}
+#skip-nav a:link, 
+#skip-nav a:hover, 
+#skip-nav a:visited {
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  top: -999em;
+}
+#skip-nav a:active,
+#skip-nav a:focus {
+  background: #FFF;
+  color: #C00000;
+  height: 1.5em;
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: auto;
+  z-index: 1000;
+}
+*/
+
+
+/**********************************************************
+ *                 Header Elements
+ **********************************************************/
+/* #header wraps #branding, #search-box-top and #header-blocks. */
+
+
+/* #branding wraps #logo, #site-name and #site-slogan. */
+#branding {
+display: none;
+float: left; /* LTR */
+
+}
+
+/* h1 is for the front page only, all others use the div. */
+#branding h1 {font-size: 1em;} /* reset h1, do not change! */
+
+/* Logo and site_name wrapper. */
+.logo-site-name {display: none;}
+div.logo-site-name {}
+h1.logo-site-name  {}
+
+/* DIV/strong combo when when title is set. */
+div.logo-site-name strong {}
+
+/* Remove display:block if you want the site name inline with the logo. */
+.logo-site-name span {
+  display: block;
+}
+
+/* Logo. */
+#logo {}
+
+#site-name {
+} 
+
+#site-name a {
+height: 100px;
+}
+
+/* Override default pseudo class styles. */
+#site-name a:link    {}
+#site-name a:visited {}
+#site-name a:hover   {}
+#site-name a:focus   {}
+#site-name a:active  {}
+
+/* Site slogan. */
+#site-slogan {
+}
+
+
+/**********************************************************
+ *    Search box, Advanced search form, Search results
+ *          For the search block see blocks.css
+ **********************************************************/
+/**
+ * Search box
+ */
+/* Float the serch box right. */
+#search-box {
+  float: right; /* LTR */
+}
+
+/* Reset form element margins. */
+#search-theme-form {
+  margin: 1.5em 0;
+}
+
+/* Use the child selector because the inner div has no class. */
+#search-theme-form > div {}
+
+/* #search and .container-inline apply to the same div. */
+#search-theme-form #search {}
+#search-theme-form .container-inline {}
+
+#search-theme-form label {}
+#search-theme-form input {}
+#search-theme-form .form-item {}
+#search-theme-form .form-submit {}
+
+#edit-search-theme-form-1 {}
+
+/* Override forms.css focus style */
+#edit-search-theme-form-1:hover,
+#edit-search-theme-form-1:focus {}
+
+
+/**
+ * Advanced search form
+ */
+/* Advanced search-form id. */
+#search-form {}
+
+/* Use the child selector because the inner div has no class. */
+#search-form > div {}
+#search-form .container-inline {}
+#search-form #edit-keys-wrapper {}
+
+#search-form label {}
+#search-form input {}
+#search-form .form-item {}
+#search-form .form-submit {}
+
+/* Override forms.css text field focus style. */
+#search-form #edit-keys-wrapper input:hover,
+#search-form #edit-keys-wrapper input:focus {}
+
+/* Advanced search fieldset. */
+fieldset #search-advanced {}
+
+/**
+ * Search results
+ */
+/* Box styles for the results page. */
+.section-search .box {}
+.section-search .box-inner {}
+.section-search .box-title {}
+
+/* Style the no results messages. */
+.section-search .box ul {}
+.section-search .box ul li {}
+
+/* Search results document list. */
+dl.search-results {}
+dl.search-results dt {}
+dl.search-results dd {}
+dl.search-results dd p {}
+dl.search-results dd .search-snippet {}
+dl.search-results dd .search-info {}
+
+
+/**********************************************************
+ *               Primary & Secondary Links
+ **********************************************************/
+/**
+ * Implimentation of Primary and Secondary Links.
+ *
+ * Primary & Secondary Links are colored by default so you 
+ * can easily identify them.
+ */
+
+/**
+ * #nav is the containing div for Primary & Secondary Links.
+ */
+#nav {
+}
+
+
+/**
+ * Primary Links Positioning
+ */
+/* FLOAT PRIMARY RIGHT */
+/* #primary .primary-inner {float: right;} */
+/* ALIGN PRIMARY CENTER */
+/* #primary .primary-inner {display: table; margin: 0 auto; text-align: center;} */
+
+/**
+ * Primary Links Style
+ * Example styles to get you started.
+ */
+#primary {
+ }
+
+#nav .primary-links {
+  /*text-align: center;
+  margin-right: 1%;*/
+}
+
+
+/* Modify the margin to set tab spacings. */
+#nav .primary-links li {
+  display: inline;
+  list-style: none;
+}
+
+#nav .primary-links li:hover {
+}
+
+#nav .primary-links li a {
+  font-size: 1.1em;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 35px;
+  font-variant: small-caps;
+  letter-spacing: .2em;
+  z-index: 5;
+  color: #434343;
+}
+
+#nav .primary-links li a:hover {
+color: #EAEAEA;
+-webkit-transition: all 200ms linear;
+-moz-transition: all 200ms linear;
+-ms-transition: all 200ms linear;
+-o-transition: all 200ms linear;
+transition: all 200ms linear;
+}
+
+
+
+/* Set pseudo class styles. */
+#nav .primary-links li a:hover {}
+#nav .primary-links li a:focus {}
+#nav .primary-links li a:active {}
+#nav .primary-links li a:visited {}
+
+/* Primary first and last classes. */
+#nav .primary-links li.first {}
+#nav .primary-links li.last {}
+
+/* Active trail classes. */
+#nav .primary-links li.active {}
+#nav .primary-links li.active-trail {}
+#nav .primary-links li.active-trail a {}
+
+
+/**
+ * Secondary Links Positioning
+ */
+/* FLOAT SECONDARY RIGHT */
+/* #secondary .secondary-inner {float: right;} */
+/* ALIGN SECONDARY CENTER */
+/* #secondary .secondary-inner {display: table; margin: 0 auto; text-align: center;} */
+
+/**
+ * Secondary Links Style
+ */
+#secondary {display: none;}
+
+#nav .secondary-links {
+  background: ; /* Default gray for dev only. */
+  margin: 0;
+  padding: 0; 
+}
+
+/* Modify the margin to set tab spacings. */
+#nav .secondary-links li {}
+
+#nav .secondary-links li a {}
+
+/* Set pseudo class styles. */
+#nav .secondary-links li a:hover {}
+#nav .secondary-links li a:focus {}
+#nav .secondary-links li a:active {}
+#nav .secondary-links li a:visited {}
+
+/* Secondary first and last classes. */
+#nav .secondary-links li.first {}
+#nav .secondary-links li.last {}
+
+/* Active trail classes. */
+#nav .secondary-links li.active {}
+#nav .secondary-links li.active-trail {}
+#nav .secondary-links li.active-trail a {}
+
+
+/**********************************************************
+ *                      Breadcrumb
+ **********************************************************/
+/**
+ * Genesis places the breadcrumb directly below the header, 
+ * giving it the full width of theme to expand into.
+ * You can eaisly drag the breadcrumb html to the main 
+ * content column if you need to.
+ */
+#breadcrumb {
+  padding: 0 0 0em;
+  display: none;
+}
+
+
+/**********************************************************
+ *                       Mission
+ **********************************************************/
+#mission {
+  font-weight: bold;
+  margin: 0 0 1.5em;
+}
+
+
+/**********************************************************
+ *                    H1 Page Title
+ **********************************************************/
+/* The main title on each page. */
+h1#page-title {}
+.section-grid #page-title, .section-list #page-title, .section-gridview #page-title, .section-listview #page-title  {
+display: none;
+}
+
+.section-category h1, .section-taxonomy h1 {
+clear: both;
+}
+
+/**********************************************************
+ *                     Pager 
+ **********************************************************/
+/* The first 2 classes provide the base pager styles. */
+.item-list ul.pager    {
+  text-align: right; 
+  margin-bottom: 50px;
+
+  padding-top: 40px;
+  }
+.item-list ul.pager li {
+  margin: 0;
+  font-size: 1.7em;
+background-color: #A6A5A3;
+color:#DBDAD7; 
+-webkit-border-radius: 4px;
+border-radius: 4px; 
+}
+.item-list ul.pager li:hover {
+background-color: #97A252; 
+color:#DBDAD7;
+}
+
+/* Theme the various states of pager links. */
+.item-list ul.pager li a:link    {}
+.item-list ul.pager li a:visited {}
+.item-list ul.pager li a:hover   {}
+
+/* Note: .pager-current is for the current page. */
+.item-list ul.pager li.pager-item     {}
+.item-list ul.pager li.first          {}
+.item-list ul.pager li.last           {}
+.item-list ul.pager li.pager-current  {}
+.item-list ul.pager li.pager-first    {}
+.item-list ul.pager li.pager-previous {}
+.item-list ul.pager li.pager-next     {}
+.item-list ul.pager li.pager-last     {}
+
+
+/**********************************************************
+ *               Footer, Footer Message
+ **********************************************************/
+#foot-wrapper {
+
+background-color: #8f918e;
+height: auto;
+}
+
+#footer {}
+#footer .region-inner {}
+
+#footer-message {}
+
+#footer a, 
+#footer-message a {}
+
+
+/**********************************************************
+ *                 RSS Feed Icon
+ **********************************************************/
+.feed-icon {}
+.feed-icon img {
+  padding:0 0.5em;
+}
+#footer-message a.feed-icon {}
+
+.section-category #page-title {
+margin-bottom: 10px;
+padding: 0 0 2px 12px;
+font-size: 2.5em;
+background-color: #DBDAD7;
+color: #5B5A5B;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 5px #9B9B9B;
+box-shadow: 0 1px 5px #9B9B9B;
+}
+
+#block-views-openlayers_databox-block_1 {
+float: right;
+width: 18%;
+-webkit-box-shadow: 0 1px 5px #9B9B9B;
+box-shadow: 0 1px 5px #9B9B9B;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+display: block;
+margin: -87px 5.1% 0 0;
+}
+
+

@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * implementation of hook_menu()
+ */
+
+function clear_log_button_menu() {
+  $menu['admin/dblog/clear']  = array(
+      'title' => 'Content',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('clear_log_button_clear_confirm'),
+      'access arguments' => array('administer site configuration'),
+      'type' => MENU_CALLBACK,
+      'file' => 'clear_log_button.module',
+  );
+  return $menu;
+}
+
+
+/**
+ * implementation of hook_form_FORM_ID_alter()
+ */
+
+function clear_log_button_form_dblog_filter_form_alter(&$form, &$form_state) {
+    $form[] = array(
+        '#type' => 'submit',
+        '#value' => 'Clear log',
+        '#submit' => array('clear_log_button_submit'),
+        );
+}
+
+function clear_log_button_submit($form, &$form_state) {
+    $destination = drupal_get_destination();
+    $form_state['redirect'] = array('admin/dblog/clear', $destination);
+}
+
+function clear_log_button_clear_confirm(&$form_state) {
+    $destination = isset($_GET['destination']) ? $_GET['destination'] : '';
+    $form['destination'] = array(
+        '#type' => 'value',
+        '#value' => $destination,
+        );
+
+    return confirm_form($form,
+        t('Are you sure you want to clear the db log?'),
+        $destination,
+        t('This action cannot be undone.'),
+        t('Yes'),
+        t('No')
+    );
+}
+
+function clear_log_button_clear_confirm_submit($form, &$form_state) {
+    db_query("TRUNCATE TABLE {watchdog}");
+    drupal_set_message("The DB log has been cleared.");
+    $form_state['redirect'] = $form_state['values']['destination'];
+}
