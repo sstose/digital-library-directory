@@ -104,6 +104,9 @@
 #container {
   width: 100%;     /* Width for IE6 */
 }
+td {
+	border-bottom: none;
+}
 
 body > #container {
   width: 100%;     /* Width for all other browsers 90% */
@@ -112,6 +115,28 @@ body > #container {
 }
 
 .node .picture {display: none;}
+
+#content-column {
+	padding-bottom: 10em;
+}
+
+/*
+#main-content h1#page-title {
+	padding: 30px 0 30px 0;
+}
+*/
+.page-favorites #main-content h1#page-title {
+	padding: 0 0 50px 0;
+	font-variant: small-caps;
+	color:#7f7f7f
+	}
+	
+.page-ratings #main-content h1#page-title {
+	padding: 50px 0 20px 0;
+	font-variant: small-caps;
+	color:#7f7f7f
+	}
+
 
 /*.section-index .block-vocabindex .block-content {height: 450px; overflow: auto;} 
 
@@ -162,6 +187,10 @@ opacity: .8;
 /*font-family: "Dutch-Harely";*/
 font-size: 1.4em;
 font-weight: 500;
+}
+
+#block-block-26 #taxonomymainmenu .taxtop .inner {
+	padding-top: 10px;
 }
 /*
 @font-face {
@@ -275,8 +304,8 @@ display: none;
 padding-top: 15px;
 background-color: #3C3C3C;
 margin: 0 1px 0 0;
--webkit-border-radius: 0 0 8px 8px;
-border-radius: 0 0 8px 8px;
+-webkit-border-radius: 0 0 2px 2px;
+border-radius: 0 0 2px 2px;
 }
 
 #footer #taxonomymainmenu .taxtop .list {
@@ -370,10 +399,10 @@ margin: 0;
 padding: 60px 0 0 0;
 }
 #block-block-10 .block-content {
-font-size: .9em;
+font-size: 1.1em;
 letter-spacing: .2em;
 text-align: right;
-padding: 0 10px 0 0;
+padding: 0 20px 0 0;
 position: relative;
 top: 17px;
 width: 33%;
@@ -444,7 +473,7 @@ For help on the negative margins below, see: http://www.alistapart.com/articles/
 .two-col-50-b .col-2{float:right;}
 .two-col-50-b .gpanel{margin:0;}
 
-.two-col-50-b .region {width: 100%; margin-top: 15px;}
+.two-col-50-b .region {width: 100%; margin-top: 45px; margin-bottom: 45px;}
 .two-col-50-b .col-1 {float: left; width: 85%; margin-right: -85%; z-index: 1;}
 .two-col-50-b .col-2 .inner {margin-left: 85%;}
 
@@ -456,7 +485,7 @@ For help on the negative margins below, see: http://www.alistapart.com/articles/
 #quaternary-content {
 border-top: 80px solid #9B9B9B;
 background-image: url(../images/background_5.png);
-padding-bottom: 100px;
+padding: 40px 0;
 }
 
 #quaternary-content .region-inner {width: 90%; margin: 0 auto; min-width: 1000px;} 
@@ -469,6 +498,7 @@ margin-top: 60px;
 .section-your-ratings #content .view-votes-block {
 margin-right: -4.1%;
 padding-bottom: 20px;
+padding-top: 120px;
 }
 
 #quaternary-content .views-row, .view-votes-block .views-row {
@@ -522,8 +552,8 @@ float: right;
 margin: 20px 4% 0 0;
 padding: 5px;
 background-color: #B1B894;
--webkit-border-radius: 4px;
-border-radius: 4px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
 }
 
 .more-link2 {
@@ -770,7 +800,7 @@ dl.search-results dd .search-info {}
 }
 
 #nav .primary-links li a {
-  font-size: 1.1em;
+  font-size: 1.3em;
   text-decoration: none;
   display: inline-block;
   margin-right: 35px;
@@ -847,6 +877,9 @@ transition: all 200ms linear;
 #nav .secondary-links li.active-trail a {}
 
 
+
+
+
 /**********************************************************
  *                      Breadcrumb
  **********************************************************/
@@ -899,8 +932,8 @@ clear: both;
   font-size: 1.7em;
 background-color: #A6A5A3;
 color:#DBDAD7; 
--webkit-border-radius: 4px;
-border-radius: 4px; 
+-webkit-border-radius: 2px;
+border-radius: 2px; 
 }
 .item-list ul.pager li:hover {
 background-color: #97A252; 
@@ -926,10 +959,24 @@ color:#DBDAD7;
 /**********************************************************
  *               Footer, Footer Message
  **********************************************************/
+/* Contact */
+
+#block-menu-secondary-links ul.menu li {
+	list-style: none;
+	font-size: 2em;
+	text-align: center;
+	padding: 3em;
+	font-variant: small-caps;
+}
+
+.page-contact #main-content {
+	margin: 100px;
+	border: 1px solid #fff;
+	padding: 30px;
+}
+
 #foot-wrapper {
 
-background-color: #8f918e;
-height: auto;
 }
 
 #footer {}
@@ -956,8 +1003,8 @@ padding: 0 0 2px 12px;
 font-size: 2.5em;
 background-color: #DBDAD7;
 color: #5B5A5B;
--webkit-border-radius: 4px;
-border-radius: 4px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
 -webkit-box-shadow: 0 1px 5px #9B9B9B;
 box-shadow: 0 1px 5px #9B9B9B;
 }
@@ -967,8 +1014,8 @@ float: right;
 width: 18%;
 -webkit-box-shadow: 0 1px 5px #9B9B9B;
 box-shadow: 0 1px 5px #9B9B9B;
--webkit-border-radius: 4px;
-border-radius: 4px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
 display: block;
 margin: -87px 5.1% 0 0;
 }
