@@ -998,15 +998,13 @@ color:#DBDAD7;
 #footer-message a.feed-icon {}
 
 .section-category #page-title {
-margin-bottom: 10px;
-padding: 0 0 2px 12px;
-font-size: 2.5em;
+margin-bottom: 40px;
+padding: 5px 10px;
+font-size: 1.7em;
 background-color: #DBDAD7;
 color: #5B5A5B;
 -webkit-border-radius: 2px;
 border-radius: 2px;
--webkit-box-shadow: 0 1px 5px #9B9B9B;
-box-shadow: 0 1px 5px #9B9B9B;
 }
 
 #block-views-openlayers_databox-block_1 {
